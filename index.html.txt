@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="bn" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAMAL TRAVELS | বিশ্বস্ত সেবা কেন্দ্র</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Hind Siliguri -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+   
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Hind Siliguri', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            DEFAULT: '#EA9940',
+                             hover: '#D8832A',
+                            light: '#FBF0E3',
+                        },
+                        secondary: {
+                            DEFAULT: '#ECE7DC',
+                            border: '#DDD6C6',
+                            hover: '#E2DCCF',
+                        },
+                        dark: {
+                            DEFAULT: '#1C1917',
+                            muted: '#57534E',
+                            subtle: '#292524',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+            background-color: #FFFFFF;
+            color: #1C1917;
+        }
+        details summary::-webkit-details-marker {
+            display: none;
+        }
+    
+        /* ---------- TAMAL TRAVELS: smooth motion system ---------- */
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 88px;
+        }
+
+        :root {
+            --motion-duration: 720ms;
+            --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        /* Content is visible by default; JS adds reveal effects safely */
+        .motion-ready .reveal {
+            opacity: 0;
+            transform: translate3d(0, 28px, 0);
+            transition:
+                opacity var(--motion-duration) var(--motion-ease),
+                transform var(--motion-duration) var(--motion-ease);
+            will-change: opacity, transform;
+        }
+
+        .motion-ready .reveal.from-left {
+            transform: translate3d(-32px, 0, 0);
+        }
+
+        .motion-ready .reveal.from-right {
+            transform: translate3d(32px, 0, 0);
+        }
+
+        .motion-ready .reveal.is-visible {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+        }
+
+        /* Cards enter with a gentle stagger */
+        .motion-ready .reveal-stagger > * {
+            opacity: 0;
+            transform: translate3d(0, 20px, 0);
+            transition:
+                opacity 650ms var(--motion-ease),
+                transform 650ms var(--motion-ease);
+        }
+
+        .motion-ready .reveal-stagger.is-visible > * {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+        }
+
+        .motion-ready .reveal-stagger.is-visible > *:nth-child(2) {
+            transition-delay: 90ms;
+        }
+
+        .motion-ready .reveal-stagger.is-visible > *:nth-child(3) {
+            transition-delay: 180ms;
+        }
+
+        .motion-ready .reveal-stagger.is-visible > *:nth-child(4) {
+            transition-delay: 270ms;
+        }
+
+        .motion-ready .reveal-stagger.is-visible > *:nth-child(5) {
+            transition-delay: 360ms;
+        }
+
+        .motion-ready .reveal-stagger.is-visible > *:nth-child(6) {
+            transition-delay: 450ms;
+        }
+
+        /* Soft lift on interactive cards */
+        #services .grid > div,
+        #process .grid > div,
+        #reviews .grid > div {
+            transition:
+                transform 320ms var(--motion-ease),
+                box-shadow 320ms ease,
+                border-color 320ms ease;
+        }
+
+        #services .grid > div:hover,
+        #process .grid > div:hover,
+        #reviews .grid > div:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 14px 32px rgba(28, 25, 23, 0.075);
+            border-color: #EA9940;
+        }
+
+        /* Button feedback */
+        a, button {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* FAQ arrow movement */
+        details summary i {
+            transition: transform 300ms var(--motion-ease);
+        }
+
+        details[open] summary i {
+            transform: rotate(180deg);
+        }
+
+        /* Small floating effect on the hero visual */
+        .hero-illustration {
+            animation: heroFloat 5.5s ease-in-out infinite;
+        }
+
+        @keyframes heroFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-7px); }
+        }
+
+        /* Respect visitors who request reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+
+            .motion-ready .reveal,
+            .motion-ready .reveal.from-left,
+            .motion-ready .reveal.from-right,
+            .motion-ready .reveal-stagger > * {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+
+        /* ---------- Enhanced reference-inspired motion polish ---------- */
+        :root {
+            --motion-ease-premium: cubic-bezier(.16, 1, .3, 1);
+        }
+
+        /* Hero copy enters in a coordinated sequence on first load */
+        .hero-entrance {
+            animation: heroTextEntrance 900ms var(--motion-ease-premium) both;
+        }
+        .hero-entrance:nth-child(2) {
+            animation-delay: 140ms;
+        }
+        @keyframes heroTextEntrance {
+            from { opacity: 0; transform: translateY(24px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* More polished scroll reveals with a slight blur that clears */
+        .motion-ready .reveal {
+            filter: blur(3px);
+        }
+        .motion-ready .reveal.is-visible {
+            filter: blur(0);
+        }
+        .motion-ready .reveal-stagger > * {
+            filter: blur(2px);
+        }
+        .motion-ready .reveal-stagger.is-visible > * {
+            filter: blur(0);
+        }
+
+        /* Sequential card entrance */
+        .motion-ready .reveal-stagger.is-visible > *:nth-child(7) { transition-delay: 540ms; }
+        .motion-ready .reveal-stagger.is-visible > *:nth-child(8) { transition-delay: 630ms; }
+        .motion-ready .reveal-stagger.is-visible > *:nth-child(9) { transition-delay: 720ms; }
+        .motion-ready .reveal-stagger.is-visible > *:nth-child(10) { transition-delay: 810ms; }
+        .motion-ready .reveal-stagger.is-visible > *:nth-child(11) { transition-delay: 900ms; }
+        .motion-ready .reveal-stagger.is-visible > *:nth-child(12) { transition-delay: 990ms; }
+
+        /* Nav links, CTA buttons and small interactive elements */
+        nav a {
+            position: relative;
+            transition: color 220ms ease, transform 220ms var(--motion-ease-premium);
+        }
+        nav a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -5px;
+            height: 2px;
+            background: currentColor;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 260ms var(--motion-ease-premium);
+        }
+        nav a:hover::after,
+        nav a:focus-visible::after {
+            transform: scaleX(1);
+        }
+
+        a[class*="bg-"], button {
+            transition:
+                transform 240ms var(--motion-ease-premium),
+                box-shadow 240ms ease,
+                filter 240ms ease;
+        }
+        a[class*="bg-"]:hover, button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 24px rgba(28, 25, 23, .12);
+        }
+        a[class*="bg-"]:active, button:active {
+            transform: translateY(0) scale(.98);
+        }
+
+        /* A gentle highlight sweep for section cards */
+        #services .grid > div,
+        #process .grid > div,
+        #reviews .grid > div,
+        #documents .grid > div {
+            position: relative;
+            overflow: hidden;
+        }
+        #services .grid > div::before,
+        #process .grid > div::before,
+        #reviews .grid > div::before,
+        #documents .grid > div::before {
+            content: "";
+            position: absolute;
+            inset: 0 auto 0 -130%;
+            width: 65%;
+            background: linear-gradient(105deg, transparent, rgba(255,255,255,.38), transparent);
+            transform: skewX(-18deg);
+            pointer-events: none;
+            transition: left 650ms var(--motion-ease-premium);
+        }
+        #services .grid > div:hover::before,
+        #process .grid > div:hover::before,
+        #reviews .grid > div:hover::before,
+        #documents .grid > div:hover::before {
+            left: 150%;
+        }
+
+        /* Ambient motion remains restrained and does not compete with content */
+        .hero-illustration {
+            filter: drop-shadow(0 16px 28px rgba(28, 25, 23, .08));
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .motion-ready .reveal,
+            .motion-ready .reveal.is-visible,
+            .motion-ready .reveal-stagger > *,
+            .motion-ready .reveal-stagger.is-visible > *,
+            .hero-entrance {
+                filter: none !important;
+                animation: none !important;
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        }
+
+    </style>
+</head>
+<body class="bg-white text-dark antialiased selection:bg-primary selection:text-white">
+
+
+    <!-- 1. Top Announcement Bar -->
+    <div class="bg-secondary text-dark border-b border-secondary-border text-sm py-2 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2 text-center sm:text-left font-medium">
+            <div class="flex items-center gap-6">
+                <span><i class="fa-solid fa-phone text-primary mr-1.5"></i> +8801953340559 </span>
+                <span class="hidden md:inline"><i class="fa-solid fa-location-dot text-primary mr-1.5"></i>কাশীপুর ফিশারী রোড, পাসপোর্ট অফিসের বিপরীতে</span>
+            </div>
+            <div class="flex items-center gap-3 text-xs sm:text-sm">
+                <span class="bg-white px-3 py-0.5 rounded-full border border-secondary-border text-dark">
+                    <i class="fa-solid fa-clock text-primary mr-1"></i> খোলা: সকাল 10:00 - রাত 6:00
+                </span>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 2. Sticky Header with Inline Single-Row Navigation -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-secondary-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center gap-4">
+               
+                <!-- Brand Logo -->
+                <a href="#" class="flex items-center gap-3 flex-shrink-0">
+                    <div class="w-11 h-11 bg-primary text-white font-bold rounded-xl flex items-center justify-center text-lg shadow-sm">
+                 টিডিএস
+                    </div>
+                    <div>
+                        <span class="text-xl font-bold text-dark block leading-tight">TAMAL TRAVELS</span>
+                        <span class="text-xs text-primary font-semibold tracking-wider">বিশ্বস্ত অনলাইন সেবাকেন্দ্র</span>
+                    </div>
+                </a>
+
+
+                <!-- Single Row Desktop Navigation -->
+                <nav class="hidden lg:flex items-center gap-5 xl:gap-7 font-semibold text-dark text-sm whitespace-nowrap">
+                    <a href="#services" class="hover:text-primary transition-colors py-2">আমাদের সেবা</a>
+                    <a href="#process" class="hover:text-primary transition-colors py-2">প্রসেস ও সুবিধা</a>
+                    <a href="#documents" class="hover:text-primary transition-colors py-2">প্রয়োজনীয় ফাইল</a>
+                    <a href="#faq" class="hover:text-primary transition-colors py-2">সাধারণ প্রশ্ন</a>
+                    <a href="#reviews" class="hover:text-primary transition-colors py-2">গ্রাহকের মতামত</a>
+                </nav>
+
+
+                <!-- Right Action CTA -->
+                <div class="hidden sm:flex items-center gap-3 flex-shrink-0">
+                    <a href="#apply" class="bg-primary hover:bg-primary-hover text-white font-bold px-5 py-2.5 rounded-xl shadow-sm transition-all hover:scale-[1.02] active:scale-[0.98] text-sm">
+                        <i class="fa-solid fa-paper-plane mr-2"></i>আবেদন করুন
+                    </a>
+                </div>
+
+
+                <!-- Mobile Hamburger Button -->
+                <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg text-dark hover:bg-secondary transition-colors focus:outline-none">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+
+        <!-- Mobile Drawer -->
+        <div id="mobile-menu" class="hidden lg:hidden border-t border-secondary-border bg-white px-4 pt-3 pb-6 space-y-3 shadow-md">
+            <a href="#services" class="block py-2 text-dark font-semibold hover:text-primary">আমাদের সেবা</a>
+            <a href="#process" class="block py-2 text-dark font-semibold hover:text-primary">প্রসেস ও সুবিধা</a>
+            <a href="#documents" class="block py-2 text-dark font-semibold hover:text-primary">প্রয়োজনীয় ফাইল</a>
+            <a href="#faq" class="block py-2 text-dark font-semibold hover:text-primary">সাধারণ প্রশ্ন</a>
+            <a href="#reviews" class="block py-2 text-dark font-semibold hover:text-primary">গ্রাহকের মতামত</a>
+            <a href="#apply" class="block text-center bg-primary text-white font-bold py-2.5 rounded-xl mt-4">
+                আবেদন করুন
+            </a>
+        </div>
+    </header>
+
+
+    <!-- 3. Hero Section -->
+    <section class="py-16 lg:py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+               
+                <!-- Left Hero Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left reveal from-left hero-entrance">
+                    <div class="inline-flex items-center gap-2 bg-secondary border border-secondary-border text-dark font-semibold px-4 py-1.5 rounded-full text-xs sm:text-sm">
+                        <span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+                        TAMAL TRAVELS · ২০২৬ সংস্করণ
+                    </div>
+
+
+                    <h1 class="text-3xl sm:text-5xl lg:text-5xl font-extrabold text-dark leading-tight">
+                        ইন্ডিয়ান ভিসা, ই-পাসপোর্ট ও টিকেট বুকিংয়ের <span class="text-primary">নির্ভরযোগ্য সমাধান</span>
+                    </h1>
+
+
+                    <p class="text-base sm:text-lg text-dark-muted leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        ঝামেলাহীন ভিসা ফাইল প্রসেসিং, দ্রুত ই-পাসপোর্ট আবেদন, এয়ার/বাস/ট্রেন টিকিট বুকিং এবং অনলাইন ট্রাভেল ও পোর্ট ট্যাক্স পরিশোধের ওয়ান-স্টপ ডিজিটাল প্ল্যাটফর্ম।
+                    </p>
+
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#apply" class="bg-primary hover:bg-primary-hover text-white font-bold px-7 py-3.5 rounded-xl shadow-md transition-all hover:-translate-y-1 text-base">
+                            <i class="fa-solid fa-file-circle-check mr-2"></i>এখনই আবেদন করুন
+                        </a>
+                        <a href="#documents" class="bg-secondary hover:bg-secondary-hover text-dark font-bold px-6 py-3.5 rounded-xl border border-secondary-border transition-all hover:-translate-y-1 text-base">
+                            কাগজপত্রের তালিকা দেখুন
+                        </a>
+                    </div>
+
+
+                    <!-- Stats Grid -->
+                    <div class="pt-8 border-t border-secondary-border grid grid-cols-2 sm:grid-cols-4 gap-4 text-center lg:text-left">
+                        <div class="bg-secondary/40 p-3 rounded-xl border border-secondary-border">
+                            <div class="text-2xl font-extrabold text-primary">৫০০০+</div>
+                            <div class="text-xs font-semibold text-dark-muted">সফল ভিসা আবেদন</div>
+                        </div>
+                        <div class="bg-secondary/40 p-3 rounded-xl border border-secondary-border">
+                            <div class="text-2xl font-extrabold text-primary">১০,০০০+</div>
+                            <div class="text-xs font-semibold text-dark-muted">ই-পাসপোর্ট ও টিকেট</div>
+                        </div>
+                        <div class="bg-secondary/40 p-3 rounded-xl border border-secondary-border">
+                            <div class="text-2xl font-extrabold text-primary">১০০%</div>
+                            <div class="text-xs font-semibold text-dark-muted">নির্ভুল ফাইল প্রসেসিং</div>
+                        </div>
+                        <div class="bg-secondary/40 p-3 rounded-xl border border-secondary-border">
+                            <div class="text-2xl font-extrabold text-primary">২৪/৭</div>
+                            <div class="text-xs font-semibold text-dark-muted">গ্রাহক সহায়তা</div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Right Hero Vector/Card Illustration -->
+                <div class="lg:col-span-5 reveal from-right hero-entrance">
+                    <div class="bg-secondary/60 rounded-3xl p-8 border border-secondary-border shadow-sm text-center relative hero-illustration">
+                        <div class="w-20 h-20 bg-primary/10 text-primary rounded-2xl flex items-center justify-center text-4xl mx-auto mb-6">
+                            <i class="fa-solid fa-passport"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark mb-2">১০০% সঠিক তথ্য ও ফাইল প্রস্তুত</h3>
+                        <p class="text-dark-muted text-sm mb-6">আমাদের অভিজ্ঞ টিম আপনার আবেদন ফরম ও দরকারি ডকুমেন্টস সূক্ষ্মভাবে যাচাই করে জমা দেয়।</p>
+                       
+                        <div class="space-y-3 text-left">
+                            <div class="flex items-center gap-3 p-3 bg-white rounded-xl border border-secondary-border shadow-sm">
+                                <i class="fa-solid fa-circle-check text-primary text-lg"></i>
+                                <span class="text-xs font-semibold text-dark">ইন্ডিয়ান ভিসা ফরম & ই-টোকেন অ্যাপয়েন্টমেন্ট</span>
+                            </div>
+                            <div class="flex items-center gap-3 p-3 bg-white rounded-xl border border-secondary-border shadow-sm">
+                                <i class="fa-solid fa-circle-check text-primary text-lg"></i>
+                                <span class="text-xs font-semibold text-dark">ই-পাসপোর্ট ফরম ও ব্যাংক চালান স্লিপ</span>
+                            </div>
+                            <div class="flex items-center gap-3 p-3 bg-white rounded-xl border border-secondary-border shadow-sm">
+                                <i class="fa-solid fa-circle-check text-primary text-lg"></i>
+                                <span class="text-xs font-semibold text-dark">অনলাইন ল্যান্ড পোর্ট ও ট্রাভেল ট্যাক্স রসিদ</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 4. Services Grid Section -->
+    <section id="services" class="py-20 bg-white border-t border-secondary-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="inline-block bg-secondary border border-secondary-border text-dark text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-2">আমাদের সেবাসমূহ</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-dark">বিশ্বস্ত সার্ভিস, পরিপাটি প্রসেসিং ও সর্বোচ্চ সফলতা</h2>
+                <div class="w-16 h-1 bg-primary mx-auto mt-4 rounded-full"></div>
+            </div>
+
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white p-7 rounded-2xl border border-secondary-border shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-secondary text-primary font-bold rounded-xl flex items-center justify-center text-xl mb-5">
+                        <i class="fa-solid fa-passport"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-dark mb-2">ইন্ডিয়ান ভিসা প্রসেসিং</h3>
+                    <p class="text-dark-muted text-sm leading-relaxed mb-4">
+                        ট্যুরিস্ট, মেডিকেল, বিজনেস ও স্টুডেন্ট ভিসার জন্য আবেদন ফরম পূরণ, অ্যাপয়েন্টমেন্ট তারিখ নেওয়া ও ইনভাইটেশন লেটার সাপোর্ট।
+                    </p>
+                    <a href="#apply" onclick="setService('ইন্ডিয়ান ভিসা প্রসেসিং')" class="inline-flex items-center text-xs font-bold text-primary hover:underline">
+                        আবেদন করুন <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+
+
+                <!-- Card 2 -->
+                <div class="bg-white p-7 rounded-2xl border border-secondary-border shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-secondary text-primary font-bold rounded-xl flex items-center justify-center text-xl mb-5">
+                        <i class="fa-solid fa-id-card"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-dark mb-2">ই-পাসপোর্ট আবেদন</h3>
+                    <p class="text-dark-muted text-sm leading-relaxed mb-4">
+                        নতুন ই-পাসপোর্ট তৈরি, মেয়াদ্দোত্তীর্ণ পাসপোর্ট রি-ইস্যু এবং নামের বানান বা তথ্য সংশোধনের নির্ভুল ফাইল প্রস্তুতকরণ।
+                    </p>
+                    <a href="#apply" onclick="setService('ই-পাসপোর্ট আবেদন')" class="inline-flex items-center text-xs font-bold text-primary hover:underline">
+                        আবেদন করুন <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+
+
+                <!-- Card 3 -->
+                <div class="bg-white p-7 rounded-2xl border border-secondary-border shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-secondary text-primary font-bold rounded-xl flex items-center justify-center text-xl mb-5">
+                        <i class="fa-solid fa-plane-departure"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-dark mb-2">এয়ার টিকিট বুকিং</h3>
+                    <p class="text-dark-muted text-sm leading-relaxed mb-4">
+                        অভ্যন্তরীণ ও আন্তর্জাতিক সকল এয়ারলাইন্সের টিকিট সাশ্রয়ী মূল্যে বুকিং, তারিখ পরিবর্তন ও ক্যানসেলেশন সহায়তা।
+                    </p>
+                    <a href="#apply" onclick="setService('এয়ার টিকিট বুকিং')" class="inline-flex items-center text-xs font-bold text-primary hover:underline">
+                        টিকেট কাটুন <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+
+
+                <!-- Card 4 -->
+                <div class="bg-white p-7 rounded-2xl border border-secondary-border shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-secondary text-primary font-bold rounded-xl flex items-center justify-center text-xl mb-5">
+                        <i class="fa-solid fa-bus"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-dark mb-2">বাস ও ট্রেন টিকিট</h3>
+                    <p class="text-dark-muted text-sm leading-relaxed mb-4">
+                        দেশের দূরপাল্লার এসি/নন-এসি বাস এবং ঢাকা-কলকাতা মৈত্রী ও বন্ধন এক্সপ্রেস ট্রেনের নিশ্চিত টিকিট সার্ভিস।
+                    </p>
+                    <a href="#apply" onclick="setService('বাস ও ট্রেন টিকিট')" class="inline-flex items-center text-xs font-bold text-primary hover:underline">
+                        টিকেট বুক করুন <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+
+
+                <!-- Card 5 -->
+                <div class="bg-white p-7 rounded-2xl border border-secondary-border shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-secondary text-primary font-bold rounded-xl flex items-center justify-center text-xl mb-5">
+                        <i class="fa-solid fa-receipt"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-dark mb-2">ট্রাভেল ও পোর্ট ট্যাক্স</h3>
+                    <p class="text-dark-muted text-sm leading-relaxed mb-4">
+                        বেনাপোল, গেদে, আগরতলাসহ যেকোনো স্থলাঞ্চলের ট্রাভেল ও পোর্ট ট্যাক্স ই-রসিদ সাথে সাথে সংগ্রহ করুন।
+                    </p>
+                    <a href="#apply" onclick="setService('ট্রাভেল ও পোর্ট ট্যাক্স')" class="inline-flex items-center text-xs font-bold text-primary hover:underline">
+                        ট্যাক্স জমা দিন <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+
+
+                <!-- Card 6 -->
+                <div class="bg-white p-7 rounded-2xl border border-secondary-border shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-secondary text-primary font-bold rounded-xl flex items-center justify-center text-xl mb-5">
+                        <i class="fa-solid fa-hotel"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-dark mb-2">হোটেল ও কাস্টম প্যাকেজ</h3>
+                    <p class="text-dark-muted text-sm leading-relaxed mb-4">
+                        ভারতে চিকিৎসা বা ভ্রমণের জন্য বাজেটের মধ্যে হোটেল বুকিং এবং ট্রাভেল প্যাকেজ কাস্টমাইজেশন সুবিধা।
+                    </p>
+                    <a href="#apply" onclick="setService('হোটেল ও কাস্টম প্যাকেজ')" class="inline-flex items-center text-xs font-bold text-primary hover:underline">
+                        প্যাকেজ জানুন <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 5. Step-by-Step Breakdown (Index Style Layout) -->
+    <section id="process" class="py-20 bg-secondary/30 border-t border-secondary-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="inline-block bg-white border border-secondary-border text-dark text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-2">প্রসেস ও নির্দেশিকা</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-dark">একনজরে আমাদের কাজের প্রক্রিয়া</h2>
+                <div class="w-16 h-1 bg-primary mx-auto mt-4 rounded-full"></div>
+            </div>
+
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Step 01 -->
+                <div class="bg-white p-6 rounded-2xl border border-secondary-border flex items-start gap-4 shadow-sm hover:shadow-md transition-all">
+                    <span class="text-2xl font-extrabold text-primary bg-secondary px-3 py-1 rounded-xl">01</span>
+                    <div>
+                        <h4 class="font-bold text-dark mb-1">প্রাথমিক তথ্য ও ডকুমেন্টস ভেরিফিকেশন</h4>
+                        <p class="text-xs text-dark-muted leading-relaxed">পাসপোর্ট, এনআইডি ও ছবিসহ প্রয়োজনীয় কাগজপত্র প্রাথমিকভাবে চেক করা হয়।</p>
+                    </div>
+                </div>
+
+
+                <!-- Step 02 -->
+                <div class="bg-white p-6 rounded-2xl border border-secondary-border flex items-start gap-4 shadow-sm hover:shadow-md transition-all">
+                    <span class="text-2xl font-extrabold text-primary bg-secondary px-3 py-1 rounded-xl">02</span>
+                    <div>
+                        <h4 class="font-bold text-dark mb-1">নির্ভুল অনলাইন ডাটা এন্ট্রি</h4>
+                        <p class="text-xs text-dark-muted leading-relaxed">অফিসিয়াল পোর্টালে আপনার সব তথ্য ১০০% নিখুঁতভাবে ফর্ম পূরণ করা হয়।</p>
+                    </div>
+                </div>
+
+
+                <!-- Step 03 -->
+                <div class="bg-white p-6 rounded-2xl border border-secondary-border flex items-start gap-4 shadow-sm hover:shadow-md transition-all">
+                    <span class="text-2xl font-extrabold text-primary bg-secondary px-3 py-1 rounded-xl">03</span>
+                    <div>
+                        <h4 class="font-bold text-dark mb-1">অনলাইন ফি ও ট্যাক্স পরিশোধ</h4>
+                        <p class="text-xs text-dark-muted leading-relaxed">ভিসা ফি, পোর্ট ট্যাক্স ও ট্রাভেল ট্যাক্স সরাসরি পেমেন্ট গেটওয়ে দিয়ে জমা।</p>
+                    </div>
+                </div>
+
+
+                <!-- Step 04 -->
+                <div class="bg-white p-6 rounded-2xl border border-secondary-border flex items-start gap-4 shadow-sm hover:shadow-md transition-all">
+                    <span class="text-2xl font-extrabold text-primary bg-secondary px-3 py-1 rounded-xl">04</span>
+                    <div>
+                        <h4 class="font-bold text-dark mb-1">অ্যাপয়েন্টমেন্ট স্লিপ নিশ্চিতকরণ</h4>
+                        <p class="text-xs text-dark-muted leading-relaxed">আইভ্যাক (IVAC) বা পাসপোর্ট অফিসের নিদির্ষ্ট তারিখের টোকেন স্লিপ জেনারেট।</p>
+                    </div>
+                </div>
+
+
+                <!-- Step 05 -->
+                <div class="bg-white p-6 rounded-2xl border border-secondary-border flex items-start gap-4 shadow-sm hover:shadow-md transition-all">
+                    <span class="text-2xl font-extrabold text-primary bg-secondary px-3 py-1 rounded-xl">05</span>
+                    <div>
+                        <h4 class="font-bold text-dark mb-1">ফাইল বাইন্ডিং ও চেকলিস্ট ভেরিফিকেশন</h4>
+                        <p class="text-xs text-dark-muted leading-relaxed">সিরিয়াল অনুযায়ী প্রিন্টকপি গুছিয়ে জমা দেওয়ার উপযুক্ত ফাইল প্রস্তুত।</p>
+                    </div>
+                </div>
+
+
+                <!-- Step 06 -->
+                <div class="bg-white p-6 rounded-2xl border border-secondary-border flex items-start gap-4 shadow-sm hover:shadow-md transition-all">
+                    <span class="text-2xl font-extrabold text-primary bg-secondary px-3 py-1 rounded-xl">06</span>
+                    <div>
+                        <h4 class="font-bold text-dark mb-1">জমা পরবর্তী ট্র্যাকিং সাপোর্ট</h4>
+                        <p class="text-xs text-dark-muted leading-relaxed">ফাইল জমার পর পাসপোর্ট বা ভিসা স্ট্যাটাস ট্র্যাক করতে সার্বক্ষণিক সহায়তা।</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 6. Required Documents Checklist Section -->
+    <section id="documents" class="py-20 bg-white border-t border-secondary-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+               
+                <div class="lg:col-span-5 text-center lg:text-left">
+                    <span class="inline-block bg-secondary border border-secondary-border text-dark text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-2">ফাইল চেকলিস্ট</span>
+                    <h2 class="text-3xl font-bold text-dark mb-4">ইন্ডিয়ান ভিসা ও ই-পাসপোর্টের প্রয়োজনীয় কাগজপত্র</h2>
+                    <p class="text-dark-muted text-sm leading-relaxed mb-6">
+                        কাগজপত্র সঠিকভাবে প্রস্তুত থাকলে ফাইল বাতিল হওয়ার ঝুঁকি থাকে না এবং নির্ধারিত দিনে সহজে জমা দেওয়া যায়।
+                    </p>
+                    <div class="p-4 bg-secondary/50 rounded-2xl border border-secondary-border text-left">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-headset text-2xl text-primary"></i>
+                            <div>
+                                <p class="font-bold text-xs text-dark">কোনো কাগজ নিয়ে সন্দেহ থাকলে?</p>
+                                <p class="text-xs text-dark-muted">সরাসরি কল করে জেনে নিন: +৮৮০ ১৭১০-৩৩৯২২৬</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="lg:col-span-7">
+                    <div class="bg-white p-8 rounded-3xl border border-secondary-border shadow-sm">
+                        <h3 class="text-lg font-bold text-dark mb-4 border-b border-secondary-border pb-3">জরুরি চেকলিস্ট:</h3>
+                        <div class="grid sm:grid-cols-2 gap-4 text-sm text-dark-muted">
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-primary mt-1"></i>
+                                <span>মূল পাসপোর্ট (ন্যূনতম ৬ মাসের মেয়াদ থাকতে হবে)</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-primary mt-1"></i>
+                                <span>১ কপি ছবি (২x২ ইঞ্চি সাদা ব্যাকগ্রাউন্ড)</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-primary mt-1"></i>
+                                <span>NID কার্ড় বা অনলাইন জন্মনিবন্ধন কপি</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-primary mt-1"></i>
+                                <span>বর্তমান মেয়াদের বিদ্যুৎ/গ্যাস/পানি বিলের কপি</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-primary mt-1"></i>
+                                <span>পেশাগত প্রমাণপত্র (NOC/ট্রেড লাইসেন্স/আইডি কার্ড)</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-primary mt-1"></i>
+                                <span>ব্যাংক স্টেটমেন্ট বা ১৫০ ডলার এন্ডোর্সমেন্ট</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 7. FAQ Accordion Section -->
+    <section id="faq" class="py-20 bg-secondary/30 border-t border-secondary-border">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="inline-block bg-white border border-secondary-border text-dark text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-2">সাধারণ প্রশ্ন</span>
+                <h2 class="text-3xl font-bold text-dark">আপনার মনে থাকা কিছু প্রশ্ন ও উত্তর</h2>
+                <div class="w-16 h-1 bg-primary mx-auto mt-4 rounded-full"></div>
+            </div>
+
+
+            <div class="space-y-4">
+                <!-- Q1 -->
+                <details class="group bg-white p-6 rounded-2xl border border-secondary-border shadow-sm">
+                    <summary class="flex items-center justify-between font-bold text-dark cursor-pointer">
+                        <span>১. ইন্ডিয়ান ভিসার অ্যাপয়েন্টমেন্ট টোকেন পেতে কত দিন সময় লাগে?</span>
+                        <span class="ml-4 transition-transform duration-300 group-open:-rotate-180">
+                            <i class="fa-solid fa-chevron-down text-primary"></i>
+                        </span>
+                    </summary>
+                    <p class="mt-4 text-dark-muted text-sm leading-relaxed border-t border-secondary-border pt-3">
+                        সাধারণত ১ থেকে ৩ কার্যদিবসের মধ্যে ফাঁকা স্লট অনুযায়ী ই-টোকেন বা অ্যাপয়েন্টমেন্ট তারিখ পাওয়া যায়।
+                    </p>
+                </details>
+
+
+                <!-- Q2 -->
+                <details class="group bg-white p-6 rounded-2xl border border-secondary-border shadow-sm">
+                    <summary class="flex items-center justify-between font-bold text-dark cursor-pointer">
+                        <span>২. অনলাইনে ঘরে বসে কি সার্ভিস নেওয়া সম্ভব?</span>
+                        <span class="ml-4 transition-transform duration-300 group-open:-rotate-180">
+                            <i class="fa-solid fa-chevron-down text-primary"></i>
+                        </span>
+                    </summary>
+                    <p class="mt-4 text-dark-muted text-sm leading-relaxed border-t border-secondary-border pt-3">
+                        হ্যাঁ, আপনি হোয়াটসঅ্যাপ বা ইমেইলে ডকুমেন্টস পাঠিয়ে দিলে আমরা সব কাজ রেডি করে ফাইল পডিএফ আকারে আপনাকে পাঠাতে পারব।
+                    </p>
+                </details>
+
+
+                <!-- Q3 -->
+                <details class="group bg-white p-6 rounded-2xl border border-secondary-border shadow-sm">
+                    <summary class="flex items-center justify-between font-bold text-dark cursor-pointer">
+                        <span>৩. ই-পাসপোর্ট আবেদনের পর কত দিনে পাসপোর্ট পাওয়া যায়?</span>
+                        <span class="ml-4 transition-transform duration-300 group-open:-rotate-180">
+                            <i class="fa-solid fa-chevron-down text-primary"></i>
+                        </span>
+                    </summary>
+                    <p class="mt-4 text-dark-muted text-sm leading-relaxed border-t border-secondary-border pt-3">
+                        সাধারণ ক্যাটাগরিতে ১৫-২১ কর্মদিবস এবং এক্সপ্রেস ক্যাটাগরিতে ৭-১০ কর্মদিবসের মধ্যে পাসপোর্ট পাওয়া যায়।
+                    </p>
+                </details>
+
+
+                <!-- Q4 -->
+                <details class="group bg-white p-6 rounded-2xl border border-secondary-border shadow-sm">
+                    <summary class="flex items-center justify-between font-bold text-dark cursor-pointer">
+                        <span>৪. পোর্ট ট্যাক্স ও ট্রাভেল ট্যাক্স কীভাবে পেমেন্ট করা হয়?</span>
+                        <span class="ml-4 transition-transform duration-300 group-open:-rotate-180">
+                            <i class="fa-solid fa-chevron-down text-primary"></i>
+                        </span>
+                    </summary>
+                    <p class="mt-4 text-dark-muted text-sm leading-relaxed border-t border-secondary-border pt-3">
+                        এনবিআর অনলাইন পোর্টের মাধ্যমে সঙ্গে সঙ্গে সরকারি ফি পেমেন্ট করে অফিশিয়াল চালানের কপি দেওয়া হয়।
+                    </p>
+                </details>
+
+
+                <!-- Q5 -->
+                <details class="group bg-white p-6 rounded-2xl border border-secondary-border shadow-sm">
+                    <summary class="flex items-center justify-between font-bold text-dark cursor-pointer">
+                        <span>৫. ট্রেনের টিকেট কাটতে কী কী তথ্য লাগে?</span>
+                        <span class="ml-4 transition-transform duration-300 group-open:-rotate-180">
+                            <i class="fa-solid fa-chevron-down text-primary"></i>
+                        </span>
+                    </summary>
+                    <p class="mt-4 text-dark-muted text-sm leading-relaxed border-t border-secondary-border pt-3">
+                        যাত্রীর নাম, এনআইডি/পাসপোর্ট নম্বর, মোবাইল নম্বর এবং যাত্রার নির্দিষ্ট তারিখ প্রয়োজন।
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 8. Testimonials Section -->
+    <section id="reviews" class="py-20 bg-white border-t border-secondary-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="inline-block bg-secondary border border-secondary-border text-dark text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-2">গ্রাহকের অভিজ্ঞতা</span>
+                <h2 class="text-3xl font-bold text-dark">যাঁরা আমাদের মাধ্যমে সেবা নিয়েছেন</h2>
+                <div class="w-16 h-1 bg-primary mx-auto mt-4 rounded-full"></div>
+            </div>
+
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-6 rounded-2xl border border-secondary-border bg-secondary/30">
+                    <div class="text-primary text-sm mb-3">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-xs text-dark-muted leading-relaxed mb-4">"খুবই নিখুঁতভাবে আমার ইন্ডিয়ান মেডিকেল ভিসার ফাইল রেডি করে দিয়েছেন। কোনো ঝুটঝামেলা ছাড়াই ভিসা পেয়েছি।"</p>
+                    <span class="font-bold text-sm text-dark block">- মোঃ শফিকুর রহমান</span>
+                    <span class="text-xs text-dark-muted">বরিশাল সদর</span>
+                </div>
+
+
+                <div class="p-6 rounded-2xl border border-secondary-border bg-secondary/30">
+                    <div class="text-primary text-sm mb-3">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-xs text-dark-muted leading-relaxed mb-4">"হোয়াটসঅ্যাপে ডকুমেন্ট পাঠিয়ে ঘরে বসেই ই-পাসপোর্টের আবেদনের কপি পেয়েছি। অনেক সময় বেঁচে গেছে।"</p>
+                    <span class="font-bold text-sm text-dark block">- নাজমুল হাসান</span>
+                    <span class="text-xs text-dark-muted">পটুয়াখালী</span>
+                </div>
+
+
+                <div class="p-6 rounded-2xl border border-secondary-border bg-secondary/30">
+                    <div class="text-primary text-sm mb-3">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-xs text-dark-muted leading-relaxed mb-4">"বেনাপোল বন্দরের পোর্ট ট্যাক্স ও ট্রাভেল ট্যাক্স সাথে সাথেই পেয়ে গেছি। এদের সার্ভিস দারুণ।"</p>
+                    <span class="font-bold text-sm text-dark block">- সুমাইয়া সুলতানা</span>
+                    <span class="text-xs text-dark-muted">বরিশাল</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 9. Application Form & Contact Section -->
+    <section id="apply" class="py-20 bg-secondary/40 border-t border-secondary-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12">
+               
+                <!-- Sidebar Info -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div>
+                        <span class="inline-block bg-white border border-secondary-border text-dark text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-2">অনলাইন সার্ভিস বুকিং</span>
+                        <h2 class="text-3xl font-bold text-dark">আপনার সেবা সহজ ও দ্রুত করতে তথ্য দিন</h2>
+                    </div>
+
+
+                    <p class="text-dark-muted text-sm leading-relaxed">
+                        নিচের ফর্মে আপনার বিবরণ দিন, আমাদের কাস্টমার প্রতিনিধি খুব দ্রুত আপনার সাথে যোগাযোগ করবেন।
+                    </p>
+
+
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-white text-primary border border-secondary-border flex items-center justify-center font-bold flex-shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-sm text-dark">হটলাইন নম্বর:</p>
+                                <p class="text-xs text-dark-muted">+৮৮০ ১৭১০-৩৩৯২২৬</p>
+                            </div>
+                        </div>
+
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-white text-primary border border-secondary-border flex items-center justify-center font-bold flex-shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-sm text-dark">অফিসের ঠিকানা:</p>
+                                <p class="text-xs text-dark-muted">কাশীপুর ফিশারী রোড, পাসপোর্ট অফিসের বিপরীতে</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Form -->
+                <div class="lg:col-span-7">
+                    <div class="bg-white p-8 rounded-3xl border border-secondary-border shadow-sm">
+                        <form id="appForm" onsubmit="submitForm(event)" class="space-y-4">
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-dark mb-1">আপনার নাম *</label>
+                                    <input type="text" required placeholder="সজীব চন্দ্র দাস" class="w-full px-4 py-3 rounded-xl border border-secondary-border focus:outline-none focus:border-primary text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-dark mb-1">ফোন নম্বর *</label>
+                                    <input type="tel" required placeholder="01710339226" class="w-full px-4 py-3 rounded-xl border border-secondary-border focus:outline-none focus:border-primary text-sm">
+                                </div>
+                            </div>
+
+
+                            <div>
+                                <label class="block text-xs font-bold text-dark mb-1">কাঙ্ক্ষিত সেবা নির্বাচন করুন *</label>
+                                <select id="serviceSelect" required class="w-full px-4 py-3 rounded-xl border border-secondary-border focus:outline-none focus:border-primary text-sm bg-white">
+                                    <option value="">-- সেবা নির্বাচন করুন --</option>
+                                    <option value="ইন্ডিয়ান ভিসা প্রসেসিং">ইন্ডিয়ান ভিসা প্রসেসিং</option>
+                                    <option value="ই-পাসপোর্ট আবেদন">ই-পাসপোর্ট আবেদন</option>
+                                    <option value="এয়ার টিকিট বুকিং">এয়ার টিকিট বুকিং</option>
+                                    <option value="বাস ও ট্রেন টিকিট">বাস ও ট্রেন টিকিট</option>
+                                    <option value="ট্রাভেল ও পোর্ট ট্যাক্স">ট্রাভেল ও পোর্ট ট্যাক্স</option>
+                                    <option value="হোটেল ও কাস্টম প্যাকেজ">হোটেল ও কাস্টম প্যাকেজ</option>
+                                </select>
+                            </div>
+
+
+                            <div>
+                                <label class="block text-xs font-bold text-dark mb-1">সংক্ষিপ্ত বিবরণ (ঐচ্ছিক)</label>
+                                <textarea rows="3" placeholder="আপনার নির্দিষ্ট কোনো চাহিদা থাকলে লিখুন..." class="w-full px-4 py-3 rounded-xl border border-secondary-border focus:outline-none focus:border-primary text-sm"></textarea>
+                            </div>
+
+
+                            <button type="submit" class="w-full bg-primary hover:bg-primary-hover text-white font-bold py-3.5 rounded-xl shadow-sm transition-all text-sm">
+                                ফর্ম সাবমিট করুন <i class="fa-solid fa-paper-plane ml-2"></i>
+                            </button>
+                        </form>
+
+
+                        <div id="formSuccess" class="hidden mt-4 p-4 bg-secondary border border-secondary-border rounded-xl text-xs text-dark font-bold text-center">
+                            <i class="fa-solid fa-circle-check text-primary mr-1"></i> ধন্যবাদ! আপনার তথ্য সফলভাবে পাঠানো হয়েছে।
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 10. Footer -->
+    <footer class="bg-white border-t border-secondary-border py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid sm:grid-cols-3 gap-8 mb-8 text-center sm:text-left">
+                <div>
+                    <span class="font-bold text-dark text-base block mb-2">TAMAL TRAVELS</span>
+                    <p class="text-xs text-dark-muted">আপনার নির্ভরতার সাথী। ভিসা, ই-পাসপোর্ট ও টিকেট বুকিংয়ের নির্ভরযোগ্য সেবাকেন্দ্র।</p>
+                </div>
+                <div>
+                    <span class="font-bold text-dark text-sm block mb-2">দ্রুত লিংক</span>
+                    <ul class="text-xs text-dark-muted space-y-1">
+                        <li><a href="#services" class="hover:text-primary">আমাদের সেবা</a></li>
+                        <li><a href="#process" class="hover:text-primary">প্রসেস ও সুবিধা</a></li>
+                        <li><a href="#documents" class="hover:text-primary">প্রয়োজনীয় ফাইল</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <span class="font-bold text-dark text-sm block mb-2">যোগাযোগ</span>
+                    <p class="text-xs text-dark-muted">কাশীপুর ফিশারী রোড, পাসপোর্ট অফিসের বিপরীতে</p>
+                    <p class="text-xs text-dark-muted font-semibold mt-1">+8801953340559</p>
+                </div>
+            </div>
+            <div class="border-t border-secondary-border pt-6 text-center text-xs text-dark-muted">
+                কপিরাইট © ২০২৬ TAMAL TRAVELS | সর্বস্বত্ব সংরক্ষিত।
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- JavaScript: navigation, service selection, form feedback, and animations -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const menuButton = document.getElementById("mobile-menu-btn");
+            const mobileMenu = document.getElementById("mobile-menu");
+            const serviceSelect = document.getElementById("serviceSelect");
+            const form = document.getElementById("appForm");
+            const formSuccess = document.getElementById("formSuccess");
+
+            /* Mobile navigation */
+            if (menuButton && mobileMenu) {
+                menuButton.setAttribute("aria-controls", "mobile-menu");
+                menuButton.setAttribute("aria-expanded", "false");
+
+                menuButton.addEventListener("click", () => {
+                    const isOpen = !mobileMenu.classList.contains("hidden");
+                    mobileMenu.classList.toggle("hidden");
+                    menuButton.setAttribute("aria-expanded", String(!isOpen));
+
+                    const icon = menuButton.querySelector("i");
+                    if (icon) {
+                        icon.classList.toggle("fa-bars", isOpen);
+                        icon.classList.toggle("fa-xmark", !isOpen);
+                    }
+                });
+
+                mobileMenu.querySelectorAll('a[href^="#"]').forEach((link) => {
+                    link.addEventListener("click", () => {
+                        mobileMenu.classList.add("hidden");
+                        menuButton.setAttribute("aria-expanded", "false");
+
+                        const icon = menuButton.querySelector("i");
+                        if (icon) {
+                            icon.classList.add("fa-bars");
+                            icon.classList.remove("fa-xmark");
+                        }
+                    });
+                });
+            }
+
+            /* Service cards can preselect the matching form option */
+            window.setService = function (name) {
+                if (serviceSelect) {
+                    serviceSelect.value = name;
+                }
+            };
+
+            /* Client-side form feedback only.
+               Connect a backend or form service to actually deliver submissions. */
+            window.submitForm = function (event) {
+                event.preventDefault();
+
+                if (!form || !form.reportValidity()) return;
+
+                if (formSuccess) {
+                    formSuccess.classList.remove("hidden");
+                    formSuccess.setAttribute("role", "status");
+                    formSuccess.setAttribute("aria-live", "polite");
+                }
+
+                form.reset();
+            };
+
+            /* Scroll reveal animations */
+            const reduceMotion = window.matchMedia(
+                "(prefers-reduced-motion: reduce)"
+            ).matches;
+
+            if (reduceMotion || !("IntersectionObserver" in window)) {
+                document.querySelectorAll(".reveal").forEach((element) => {
+                    element.classList.add("is-visible");
+                });
+                return;
+            }
+
+            /* Add reveal to major sections and stagger to card grids */
+            const revealTargets = document.querySelectorAll(
+                "#services, #process, #documents, #faq, #reviews, #apply, footer"
+            );
+
+            revealTargets.forEach((element) => {
+                if (!element.classList.contains("reveal")) {
+                    element.classList.add("reveal");
+                }
+            });
+
+            const staggerTargets = document.querySelectorAll(
+                "#services .grid, #process .grid, #reviews .grid, " +
+                "#documents .grid, #apply .grid"
+            );
+
+            staggerTargets.forEach((element) => {
+                element.classList.add("reveal-stagger", "reveal");
+            });
+
+            document.documentElement.classList.add("motion-ready");
+
+            const observer = new IntersectionObserver(
+                (entries, currentObserver) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("is-visible");
+                            currentObserver.unobserve(entry.target);
+                        }
+                    });
+                },
+                {
+                    threshold: 0.12,
+                    rootMargin: "0px 0px -35px 0px"
+                }
+            );
+
+            document.querySelectorAll(".reveal").forEach((element) => {
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>
